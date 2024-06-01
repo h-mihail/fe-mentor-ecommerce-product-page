@@ -34,25 +34,35 @@ export const AbsoluteCartSummaryWrapper = () => {
 };
 
 export const CartSummary = ({ items = cartItems }) => {
+  const cartHasItems = !!items.length;
+
   return (
     <div className="border-1 m-2 rounded-xl shadow-2xl bg-white">
       <div className="text-black font-bold p-5">Cart</div>
       <hr />
       <div>
         <div className="flex flex-col gap-6 p-6">
-          <div className="flex flex-col gap-2">
-            {items.map((item) => (
-              <CartItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                quantity={item.quantity}
-                thumbnail={item.thumbnail}
-              />
-            ))}
-          </div>
-          <Button>Checkout</Button>
+          {cartHasItems ? (
+            <>
+              <div className="flex flex-col gap-2">
+                {items.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    price={item.price}
+                    quantity={item.quantity}
+                    thumbnail={item.thumbnail}
+                  />
+                ))}
+              </div>
+              <Button>Checkout</Button>
+            </>
+          ) : (
+            <div className="text-center font-bold py-12">
+              Your cart is empty.
+            </div>
+          )}
         </div>
       </div>
     </div>

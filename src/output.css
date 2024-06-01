@@ -572,10 +572,6 @@ video {
   left: 0px;
 }
 
-.left-16{
-  left: 4rem;
-}
-
 .left-2{
   left: 0.5rem;
 }
@@ -728,6 +724,11 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.py-12{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -735,6 +736,10 @@ video {
 
 .pt-24{
   padding-top: 6rem;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .text-xxs{
