@@ -8,6 +8,7 @@ import { Cart } from "./Cart";
 import { AbsoluteCartSummaryWrapper } from "./CartSummary";
 import { useState } from "react";
 import { useScreenSize } from "../utils";
+import { SideMenu } from "./SideMenu";
 
 export const Layout = () => {
   const [isCartSummaryOpen, setCartSummaryOpen] = useState(false);
@@ -31,11 +32,17 @@ export const Layout = () => {
 };
 
 export const LayoutMobile = ({ isCartSummaryOpen, toggleCartSummary }) => {
+  const [isSideMenuOpen, setSideMenuOpen] = useState(false);
+
+  const toggleSideMenu = () => {
+    setSideMenuOpen(!isSideMenuOpen);
+  };
+
   return (
     <div>
       <div className="flex justify-between p-5">
         <div className="flex flex-row gap-5 items-center">
-          <a>
+          <a onClick={toggleSideMenu}>
             <img src={menuIcon} />
           </a>
           <a>
@@ -49,6 +56,8 @@ export const LayoutMobile = ({ isCartSummaryOpen, toggleCartSummary }) => {
       </div>
 
       {isCartSummaryOpen && <AbsoluteCartSummaryWrapper />}
+
+      <SideMenu open={isSideMenuOpen} onClose={toggleSideMenu} />
 
       <Outlet />
     </div>

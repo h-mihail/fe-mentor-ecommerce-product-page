@@ -16,6 +16,9 @@ export default {
           },
         ],
       },
+      backgroundColor: {
+        backdrop: "rgba(0, 0, 0, 0.75)",
+      },
     },
   },
   plugins: [],
