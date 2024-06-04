@@ -1,12 +1,18 @@
+import { useClickOutside } from "../utils";
 import closeIcon from "/src/assets/icon-close.svg";
 
 export const SideMenu = ({ isOpen, onClose }) => {
+  const [innerRef] = useClickOutside({
+    onClickOutside: isOpen ? onClose : null,
+  });
+
   return (
     <>
       {isOpen && (
         <div className={`absolute top-0 left-0 h-svh w-svw bg-backdrop`} />
       )}
       <div
+        ref={innerRef}
         className={`absolute top-0 h-svh w-[250px] p-6 bg-white transition-transform ${
           !isOpen && "translate-x-[-250px]"
         }`}
