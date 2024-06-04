@@ -1,14 +1,14 @@
 import closeIcon from "/src/assets/icon-close.svg";
 
-export const SideMenu = ({ open, onClose }) => {
+export const SideMenu = ({ isOpen, onClose }) => {
   return (
     <>
-      {open && (
+      {isOpen && (
         <div className={`absolute top-0 left-0 h-svh w-svw bg-backdrop`} />
       )}
       <div
         className={`absolute top-0 h-svh w-[250px] p-6 bg-white transition-transform ${
-          !open && "translate-x-[-250px]"
+          !isOpen && "translate-x-[-250px]"
         }`}
       >
         <img src={closeIcon} onClick={onClose} />

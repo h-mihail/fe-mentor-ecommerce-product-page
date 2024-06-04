@@ -1,37 +1,21 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
+import { Cart } from "./Cart";
+import { Avatar } from "./Avatar";
+import { SideMenu } from "./SideMenu";
+import { useScreenSize } from "../utils";
 import { HeaderLink } from "./HeaderLink";
 import sneakersLogo from "/src/assets/logo.svg";
 import menuIcon from "/src/assets/icon-menu.svg";
-import { Avatar } from "./Avatar";
-import { Cart } from "./Cart";
-import { AbsoluteCartSummaryWrapper } from "./CartSummary";
-import { useState } from "react";
-import { useScreenSize } from "../utils";
-import { SideMenu } from "./SideMenu";
 
 export const Layout = () => {
-  const [isCartSummaryOpen, setCartSummaryOpen] = useState(false);
   const { isMobile } = useScreenSize();
 
-  const toggleCartSummary = () => {
-    setCartSummaryOpen(!isCartSummaryOpen);
-  };
-
-  return isMobile ? (
-    <LayoutMobile
-      isCartSummaryOpen={isCartSummaryOpen}
-      toggleCartSummary={toggleCartSummary}
-    />
-  ) : (
-    <LayoutDesktop
-      isCartSummaryOpen={isCartSummaryOpen}
-      toggleCartSummary={toggleCartSummary}
-    />
-  );
+  return isMobile ? <LayoutMobile /> : <LayoutDesktop />;
 };
 
-export const LayoutMobile = ({ isCartSummaryOpen, toggleCartSummary }) => {
+export const LayoutMobile = () => {
   const [isSideMenuOpen, setSideMenuOpen] = useState(false);
 
   const toggleSideMenu = () => {
@@ -50,21 +34,21 @@ export const LayoutMobile = ({ isCartSummaryOpen, toggleCartSummary }) => {
           </a>
         </div>
         <div className="flex items-center flex-row gap-5">
-          <Cart items={1} onClick={toggleCartSummary} />
+          <Cart />
           <Avatar />
         </div>
       </div>
 
-      {isCartSummaryOpen && <AbsoluteCartSummaryWrapper />}
+      <SideMenu isOpen={isSideMenuOpen} onClose={toggleSideMenu} />
 
-      <SideMenu open={isSideMenuOpen} onClose={toggleSideMenu} />
-
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };
 
-export const LayoutDesktop = ({ isCartSummaryOpen, toggleCartSummary }) => {
+export const LayoutDesktop = () => {
   return (
     <div className="py-10 px-40">
       <div className="flex justify-between">
@@ -81,14 +65,12 @@ export const LayoutDesktop = ({ isCartSummaryOpen, toggleCartSummary }) => {
           </div>
         </div>
         <div className="flex flex-row gap-10 items-center">
-          <Cart items={3} onClick={toggleCartSummary} />
+          <Cart />
           <Avatar />
         </div>
       </div>
 
       <hr />
-
-      {isCartSummaryOpen && <AbsoluteCartSummaryWrapper />}
 
       <div className="pt-24">
         <Outlet />
