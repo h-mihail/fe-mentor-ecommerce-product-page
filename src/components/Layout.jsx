@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Cart } from "./Cart";
-import { Avatar } from "./Avatar";
+import { AvatarIcon } from "../icons/Avatar";
 import { SideMenu } from "./SideMenu";
 import { useScreenSize } from "../utils";
 import { HeaderLink } from "./HeaderLink";
@@ -35,7 +35,7 @@ export const LayoutMobile = () => {
         </div>
         <div className="flex items-center flex-row gap-5">
           <Cart />
-          <Avatar />
+          <AvatarIcon />
         </div>
       </div>
 
@@ -66,7 +66,7 @@ export const LayoutDesktop = () => {
         </div>
         <div className="flex flex-row gap-10 items-center">
           <Cart />
-          <Avatar />
+          <AvatarIcon />
         </div>
       </div>
 

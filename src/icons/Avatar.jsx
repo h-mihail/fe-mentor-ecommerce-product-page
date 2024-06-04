@@ -1,6 +1,6 @@
 import avatarIcon from "/src/assets/image-avatar.png";
 
-export const Avatar = () => {
+export const AvatarIcon = () => {
   return (
     <a>
       <img

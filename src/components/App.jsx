@@ -1,9 +1,9 @@
-import imageProduct1 from "/src/assets/image-product-1.jpg";
+import { Carousel } from "./Carousel";
 
 const App = () => {
   return (
     <div>
-      <img src={imageProduct1} />
+      <Carousel />
     </div>
   );
 };
