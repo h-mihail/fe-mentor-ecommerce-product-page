@@ -41,9 +41,7 @@ export const LayoutMobile = () => {
 
       <SideMenu isOpen={isSideMenuOpen} onClose={toggleSideMenu} />
 
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 };

@@ -39,7 +39,7 @@ export const Cart = () => {
   };
 
   return (
-    <div ref={innerRef}>
+    <div ref={innerRef} className="z-10">
       <a className="relative" onClick={handleClick}>
         <CartIcon />
         <span className="absolute bottom-2 left-2">
@@ -49,7 +49,7 @@ export const Cart = () => {
 
       {isMobile ? (
         <div
-          className={`absolute left-0 right-0 mr-auto ml-auto top-[4.5rem] transition-opacity ${cartVisibilityClass}`}
+          className={`absolute left-0 right-0 mr-auto ml-auto w-fit top-[4.5rem] transition-opacity ${cartVisibilityClass}`}
         >
           <CartSummary />
         </div>

@@ -9,11 +9,11 @@ export const SideMenu = ({ isOpen, onClose }) => {
   return (
     <>
       {isOpen && (
-        <div className={`absolute top-0 left-0 h-svh w-svw bg-backdrop`} />
+        <div className={`absolute top-0 left-0 h-svh w-svw bg-backdrop z-10`} />
       )}
       <div
         ref={innerRef}
-        className={`absolute top-0 h-svh w-[250px] p-6 bg-white transition-transform ${
+        className={`absolute top-0 h-svh w-[250px] p-6 bg-white z-20 transition-transform ${
           !isOpen && "translate-x-[-250px]"
         }`}
       >

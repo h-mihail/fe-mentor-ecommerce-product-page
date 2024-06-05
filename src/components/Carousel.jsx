@@ -36,7 +36,7 @@ export const Carousel = ({ items = defaultItems }) => {
   const carouselWidth = `${items.length * 100}vw`;
 
   return (
-    <div className="relative h-[375px]">
+    <div className="relative h-[100vw] overflow-hidden">
       <div
         className={`absolute left-0 top-0 flex flex-row w-[${carouselWidth}] transition-transform duration-300`}
         style={{ transform: `translateX(-${carouselTransformX})` }}
@@ -46,13 +46,13 @@ export const Carousel = ({ items = defaultItems }) => {
         ))}
       </div>
       <div
-        className="absolute left-4 top-[150px] bg-white rounded-full w-8 h-8 p-2"
+        className="absolute flex justify-center items-center left-4 top-[150px] bg-white rounded-full w-10 h-10 p-1"
         onClick={prevItem}
       >
         <PreviousIcon />
       </div>
       <div
-        className="absolute right-4 top-[150px] bg-white rounded-full w-8 h-8 p-2"
+        className="absolute flex justify-center items-center right-4 top-[150px] bg-white rounded-full w-10 h-10 p-1"
         onClick={nextItem}
       >
         <NextIcon />
