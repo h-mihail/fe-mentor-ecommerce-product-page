@@ -5,14 +5,22 @@ export default {
     extend: {
       colors: {
         orange: "var(--Orange)",
-        darkGrayishBlue: "var(--Dark-grayish-blue)",
+        paleOrange: "var(--Pale-orange)",
         grayishBlue: "var(--Grayish-blue)",
+        lightGrayishBlue: "var(--Light-grayish-blue)",
+        darkGrayishBlue: "var(--Dark-grayish-blue)",
       },
       fontSize: {
         xxs: [
           "0.625rem",
           {
             lineHeight: "0.75rem",
+          },
+        ],
+        title: [
+          "1.75rem",
+          {
+            lineHeight: "2.25rem",
           },
         ],
       },

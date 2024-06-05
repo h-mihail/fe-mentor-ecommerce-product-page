@@ -41,7 +41,7 @@ export const Cart = () => {
   return (
     <div ref={innerRef} className="z-10">
       <a className="relative" onClick={handleClick}>
-        <CartIcon />
+        <CartIcon className="w-5 h-5 fill-darkGrayishBlue hover:fill-black" />
         <span className="absolute bottom-2 left-2">
           <Badge>{cartItems.length}</Badge>
         </span>
