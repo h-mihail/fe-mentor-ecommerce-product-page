@@ -7,14 +7,22 @@ import "./output.css";
 import App from "./components/App.jsx";
 import { Layout } from "./components/Layout.jsx";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+const Main = () => {
+  const basePath =
+    process.env.NODE_ENV === "production"
+      ? "/fe-mentor-ecommerce-product-page"
+      : "";
+  return (
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path={`${basePath}`} element={<Layout />}>
+            <Route index element={<App />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Main />);
