@@ -36,7 +36,7 @@ export const LightBox = ({ items, selectedItemIndex, setIsLightboxOpen }) => {
       {createPortal(
         <div
           ref={innerRef}
-          className="absolute rounded-2xl w-[40vw] h-[40vw] z-20 top-0 bottom-0 left-0 right-0 m-auto"
+          className="absolute rounded-2xl min-w-[400px] max-w-[30vw] h-fit z-20 top-0 bottom-0 left-0 right-0 m-auto"
         >
           <div
             onClick={() => setIsLightboxOpen(false)}
@@ -62,7 +62,7 @@ export const LightBox = ({ items, selectedItemIndex, setIsLightboxOpen }) => {
           </div>
           <div className="flex gap-8 mt-8">
             {items.map((item, i) => (
-              <div key={i}>
+              <div className="bg-white rounded-xl" key={i}>
                 <img
                   className={`rounded-xl cursor-pointer border-2 border-transparent hover:border-orange ${
                     internalSelectedItemIndex === i

@@ -7,11 +7,9 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 ### Screenshot
 
 <div>
-  <img src="./screenshots/screenshot3.png" width="250">
-  <img src="./screenshots/screenshot4.png" width="250">
+  <img src="./screenshots/screenshot2.png" width="250">
 </div>
 <img src="./screenshots/screenshot1.png" width="600">
-<img src="./screenshots/screenshot2.png" width="600">
 
 ### Links
 
@@ -25,5 +23,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- [Preact](https://preactjs.com/) - JS library
+- [React](https://react.dev/) - JS library
+- [Tailwind](https://tailwindcss.com/) - CSS framework
 - [Vite](https://vitejs.dev/) - Frontend utility

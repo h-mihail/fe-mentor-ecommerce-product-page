@@ -15,7 +15,7 @@ const App = () => {
     <div className="md:flex md:gap-24">
       {isMobile && <MobileCarousel />}
       {!isMobile && <DesktopCarousel />}
-      <div className="p-4 flex flex-col gap-4 flex-1 md:gap-8">
+      <div className="p-4 flex flex-col gap-4 md:gap-8">
         <div className="text-orange text-xs font-bold tracking-widest">
           SNEAKER COMPANY
         </div>

@@ -40,12 +40,12 @@ export const Cart = () => {
 
   return (
     <div ref={innerRef} className="z-10">
-      <a className="relative" onClick={handleClick}>
-        <CartIcon className="w-5 h-5 fill-darkGrayishBlue hover:fill-black" />
-        <span className="absolute bottom-2 left-2">
+      <div className="relative w-5 h-5" onClick={handleClick}>
+        <CartIcon className="absolute w-5 h-5 fill-darkGrayishBlue hover:fill-black" />
+        <span className="absolute left-2 top-[-1.25rem]">
           <Badge>{cartItems.length}</Badge>
         </span>
-      </a>
+      </div>
 
       {isMobile ? (
         <div

@@ -18,7 +18,7 @@ export const DesktopCarousel = ({ items = defaultItems }) => {
 
   return (
     <>
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col min-w-[400px] max-w-[30vw]">
         <div>
           <img
             className="rounded-2xl cursor-pointer"
