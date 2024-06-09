@@ -13,7 +13,7 @@ const defaultItems = [
   { src: imageProduct4 },
 ];
 
-export const Carousel = ({ items = defaultItems }) => {
+export const MobileCarousel = ({ items = defaultItems }) => {
   const [activeItem, setActiveItem] = useState(0);
 
   const prevItem = () => {

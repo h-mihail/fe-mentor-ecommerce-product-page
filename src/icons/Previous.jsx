@@ -1,6 +1,11 @@
-export const PreviousIcon = () => {
+export const PreviousIcon = ({ className }) => {
   return (
-    <svg className="w-3 h-5" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="12"
+      height="20"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
       <path
         d="M11 1 3 9l8 8"
         stroke="#1D2026"
