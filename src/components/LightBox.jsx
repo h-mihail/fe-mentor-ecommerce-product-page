@@ -44,21 +44,23 @@ export const LightBox = ({ items, selectedItemIndex, setIsLightboxOpen }) => {
           >
             <CloseIcon />
           </div>
-          <div
-            onClick={prevItem}
-            className="absolute top-0 bottom-0 my-auto left-[-1.5rem] flex items-center justify-center cursor-pointer rounded-full bg-white w-12 h-12"
-          >
-            <PreviousIcon />
-          </div>
-          <img
-            className="rounded-2xl"
-            src={items[internalSelectedItemIndex].src}
-          />
-          <div
-            onClick={nextItem}
-            className="absolute top-0 bottom-0 my-auto right-[-1.5rem] flex items-center justify-center cursor-pointer rounded-full bg-white w-12 h-12"
-          >
-            <NextIcon />
+          <div className="relative">
+            <div
+              onClick={prevItem}
+              className="absolute top-0 bottom-0 my-auto left-[-1.5rem] flex items-center justify-center cursor-pointer rounded-full bg-white w-12 h-12"
+            >
+              <PreviousIcon />
+            </div>
+            <img
+              className="rounded-2xl"
+              src={items[internalSelectedItemIndex].src}
+            />
+            <div
+              onClick={nextItem}
+              className="absolute top-0 bottom-0 my-auto right-[-1.5rem] flex items-center justify-center cursor-pointer rounded-full bg-white w-12 h-12"
+            >
+              <NextIcon />
+            </div>
           </div>
           <div className="flex gap-8 mt-8">
             {items.map((item, i) => (
